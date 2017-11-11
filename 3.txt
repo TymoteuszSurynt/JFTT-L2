@@ -1,0 +1,11 @@
+\begin{document}
+\long\def\/*#1*/{}
+\begin{comment}
+abbababababba
+comment
+\end{comment}
+text
+%comment
+
+text
+\end{document}

@@ -1,0 +1,17 @@
+/**Docummentation
+*abc
+asb
+*/
+
+int main(){
+//abbababbaa///////////SS
+int x=0;
+/*
+ninfsdnf
+dnsfinsdif
+*ninisdnfsidfj
+*/
+***
+printf("// /* /** */ */");
+return 0;
+}
