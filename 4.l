@@ -4,6 +4,7 @@
 	int i=-1;
 	int error1=0;
 	int error2=0;
+	int error3=0;
 	int newpow(int x,int y){
 		int result=1;
 		for(int j=0;j<y;j++){
@@ -17,6 +18,10 @@
 \n		{
 			if(error2){
 				printf("Error: wrong sign\n");
+			}else if(error3){
+				printf("Error: Action not allowed\n");
+			}else if(i<0){
+				printf("Error: No numbers\n");
 			}else if(i!=0){
 				printf("Error: not enough operators\n");
 			}else if(error1){
@@ -26,6 +31,7 @@
 			}
 			error1=0;
 			error2=0;
+			error3=0;
 			i=-1;
 		}
 [0-9]+|-[0-9]+		{
@@ -58,8 +64,12 @@
 		}
 [/]		{
 			if(i>0){
-				numbers[i-1]=numbers[i-1]/numbers[i];
-				i--;
+				if(numbers[i]!=0){
+					numbers[i-1]=numbers[i-1]/numbers[i];
+					i--;
+				}else{
+					error3=1;
+				}
 			}else{
 				error1=1;
 			}
@@ -74,8 +84,12 @@
 		}
 [%]		{
 			if(i>0){
-				numbers[i-1]=numbers[i-1]%numbers[i];
-				i--;
+				if(numbers[i]!=0){
+					numbers[i-1]=numbers[i-1]%numbers[i];
+					i--;
+				}else{
+					error3=1;
+				}
 			}else{
 				error1=1;
 			}
